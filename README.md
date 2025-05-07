@@ -1,4 +1,4 @@
-# mag_books_and_research_review
+# Welcome to my repository for books and research articles review
 
 ## Intro
 Here, I will gather all the continuous learning that I do which will serve as a base for other projects
