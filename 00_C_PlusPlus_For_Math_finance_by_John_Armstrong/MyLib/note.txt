@@ -1,0 +1,3 @@
+Usefull file for Google web API
+source : https://developers.google.com/chart/interactive/docs/gallery/piechart
+
