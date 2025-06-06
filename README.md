@@ -9,3 +9,4 @@ This repository will be organised by books, reasearch article, MOOC and other re
 - Developing on Mac: https://johnarmstrongmaths.com/cppbook/mac.html
 - How to make a bell sounds with Xcode: https://stackoverflow.com/questions/61540065/making-a-beep-with-a-in-c-not-working-in-xcode-on-mac
 - How to compile and run c++ in terminal: https://stackoverflow.com/questions/4073289/compiling-simple-hello-world-program-on-os-x-via-command-line
+- Google Html visualization: https://developers.google.com/chart/interactive/docs/gallery/piechart
