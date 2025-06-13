@@ -25,7 +25,7 @@
 // include built in library
 #include <cmath>
 #include <stdexcept>
-
+ 
 // testing framework
 #include "testing.hpp"
 
@@ -57,5 +57,7 @@
 
 #include <cstdlib>     /* srand, rand */
 #include <random>
+
+#include <algorithm> // std::sort ()
 
 #endif /* stdafx_h */
