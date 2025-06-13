@@ -26,7 +26,7 @@
 #include <cmath>
 #include <stdexcept>
 
-// testing frameworl
+// testing framework
 #include "testing.hpp"
 
 #include <stdio.h>
@@ -36,5 +36,26 @@
 #include <iostream>
 #include <stdlib.h>
 #include <cassert>
+
+// Adding include for chap 7 - using c++ classes
+
+#include <string>
+#include <sstream>
+#include <vector>
+#include <fstream>
+#include <chrono>
+
+#include "chap_7_classes.hpp"
+#include "chap_7_classes_ofstream_strings.hpp"
+#include "chap_7_class_piechart_worldweb.hpp"
+
+#include "charts.h"
+
+#include "chap_7_solutions_to_exercises.hpp"
+
+#include <numeric> // std::accumulate
+
+#include <cstdlib>     /* srand, rand */
+#include <random>
 
 #endif /* stdafx_h */

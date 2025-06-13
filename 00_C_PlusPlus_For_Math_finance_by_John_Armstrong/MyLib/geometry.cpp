@@ -10,6 +10,9 @@
 // using the windows convention
 #include "stdafx.h"
 
+// using namespace
+using namespace std ; 
+
 double areaCircle(double radius){
     DEBUG_PRINT( "areaCircle(" << radius <<")" );
     return PI*radius*radius;

@@ -17,6 +17,9 @@
 // using the windows convention
 #include "stdafx.h"
 
+// using namespace
+using namespace std ; 
+
 // 4.8.5 - Improved norminv
 
 // the horner function will not be declared in the header file as helper function

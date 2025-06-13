@@ -30,4 +30,29 @@ int main() {
     
     // test for derivatives
     testDerivatives() ;
+    
+    // test vector
+    testVector() ;
+    
+    // test Pass by Ref or value, with or without const
+    testPassRef() ;
+    
+    // Test ofstream module
+    useOfstreamToWriteFile() ;
+    
+    // test the Write haiku function
+    testWriteHaiku() ;
+    
+    // testing basic String fucntion
+    testStringBasic() ;
+    
+    // test chart
+    testCharts() ;
+    
+    // Test exercice from chapter 7
+    testChap7_solutions() ;
+    
+    // draft
+    
+
 }

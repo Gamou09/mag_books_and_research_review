@@ -8,15 +8,18 @@
 //#include "derivatives.hpp"
 #include "stdafx.h"
 
+// using namespace
+using namespace std ;
+
 // Black-Scholes price for a European put option
 double black_scholes_put(double S, double K, double r, double sigma, double T) {
     
     if (T <= 0 || sigma <= 0 || S <= 0 || K <= 0) return 0.0;
 
-    double d1 = (std::log(S / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * std::sqrt(T));
-    double d2 = d1 - sigma * std::sqrt(T);
+    double d1 = (log(S / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * sqrt(T));
+    double d2 = d1 - sigma * sqrt(T);
 
-    return K * std::exp(-r * T) * normcdf(-d2) - S * normcdf(-d1);
+    return K * exp(-r * T) * normcdf(-d2) - S * normcdf(-d1);
 }
 
 void test_black_scholes_put() {
