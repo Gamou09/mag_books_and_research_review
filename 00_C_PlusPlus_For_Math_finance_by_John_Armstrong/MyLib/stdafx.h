@@ -60,6 +60,13 @@
 
 #include <algorithm> // std::sort ()
 
+// chap 8
+#include "BlackScholesModel.hpp"
+
+#include "CallOption.hpp"
+
+#include "PieChart.hpp"
+
 #endif /* stdafx_h */
 
 

@@ -53,7 +53,10 @@ int main() {
     testChap7_solutions() ;
     
     // Test use of class Cartesial
-    useCartesianClass() ; 
+    useCartesianClass() ;
+    
+    // Test chap 8
+    testCallOption() ; 
     
 
 }
