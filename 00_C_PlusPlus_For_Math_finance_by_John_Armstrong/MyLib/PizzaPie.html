@@ -1,0 +1,49 @@
+<html>
+<head>
+
+<!-- Load the AJAX API -->
+<script type="text/javascript"src="https://www.google.com/jsapi">"</script>
+<script type="text/javascript">
+
+// Load the Visualization API
+// and the pie chart package
+google.load('visualization', '1.0', {'packages':['corechart']});
+
+// Set a callback to run when the
+// Google  Visualization API is loaded.
+google.charts.setOnLoadCallback(drawChart);
+
+// Callback that createq  and populate a data table,
+// instantiate the pie chart, passes in the data and draws it
+function drawChart() {
+
+ // Create the data table
+ var data = new google.visualization.DataTable();
+ data.addColumn('string', 'Label') ;
+ data.addColumn('number', 'Value') ;
+data.addRows([
+  ['Mushroom', 200],
+  ['Salami', 100],
+  ['Spinach', 150]
+]);
+
+ // Set chart options
+ var options = {
+  'title' : 'Pizza Toppings',
+  'width' : 400,
+  'height' : 300
+ };
+
+ // Instantiate and draw our chart, passing in some options
+ var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+ chart.draw(data, options);
+}
+
+</script>
+</head>
+<body>
+<!-- Div that will hold the pie chart -->
+<div id="chart_div"></div>
+</body>
+</html>
+

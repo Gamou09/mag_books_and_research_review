@@ -15,7 +15,7 @@ class PieChart {
 public:
     void setTitle (const std::string& title) ;
     void addEntry (const std::string& label, double value) ;
-    void writeAsHTML (const std::ostream& out) const ;
+    void writeAsHTML ( std::ostream& out) const ;
     void writeAsHTML (const std::string& title) const ;
     
 // By marking below member variable as private, only the member function of PieChart can see these variables
@@ -28,4 +28,6 @@ private:
     std::vector<double> values ;
     
 };
+
+void testPieChart() ; 
 #endif /* PieChart_hpp */

@@ -58,5 +58,7 @@ int main() {
     // Test chap 8
     testCallOption() ; 
     
+    // test Pie chart with class
+    testPieChart() ;
 
 }
