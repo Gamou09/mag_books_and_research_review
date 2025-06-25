@@ -10,7 +10,7 @@
 // with macri we basically change the meaning of some words for the compiler
 //
 
-#pragma once
+// #pragma once
 
 #ifndef testing_hpp
 #define testing_hpp

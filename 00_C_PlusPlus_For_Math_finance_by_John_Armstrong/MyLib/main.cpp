@@ -52,7 +52,8 @@ int main() {
     // Test exercice from chapter 7
     testChap7_solutions() ;
     
-    // draft
+    // Test use of class Cartesial
+    useCartesianClass() ; 
     
 
 }

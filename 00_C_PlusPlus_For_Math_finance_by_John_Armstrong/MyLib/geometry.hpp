@@ -22,4 +22,38 @@ double circumferenceCircle(double radius) ;
 
 void testGeometry() ;
 
+// Class declaration
+// similar to other variable, or function when you declare in header you want other to be able to use it
+
+class CartesianPoint {
+    
+// allow bellow member variables to be accessible outside of the class
+// by defaut it's private
+public:
+    // member variables
+    double x;
+    double y;
+};
+
+void useCartesianClass() ;
+
+class PolarPoint {
+    
+public:
+    double r;
+    double theta;
+};
+
+CartesianPoint polarToCartesian( const PolarPoint& p) ;
+
+class Circle{
+    
+public:
+    /// we declare member variable and  some class methods
+    double radius;
+    double area() ; // notice that the declaration of the method doesn't take any paremeters
+    double circumference() const; // As seen before, we can add a const keyword but it has to be consistent
+    // here we use const for circumference implying that measure the circumference doesn't change the circle
+} ;
+
 #endif /* geometry_hpp */
