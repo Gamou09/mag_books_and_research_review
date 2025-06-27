@@ -6,3 +6,9 @@
 //
 
 #include "stdafx.h"
+
+// default constructor
+BlackScholesModel::BlackScholesModel(): stockPrice(0.0) {}
+
+// default constructor
+BlackScholesModel::BlackScholesModel(double stockPrice): stockPrice(0.0) {}

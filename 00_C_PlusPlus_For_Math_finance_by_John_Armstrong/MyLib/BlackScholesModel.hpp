@@ -19,6 +19,22 @@ public:
     double volatility;
     double riskFreeRate;
     double date; // date will be measure in year since 0 A.D e.g 01/01/2014 will be 2014.0 - For real prod, consider proper date
+    
+    // default constructor
+    // OK, no need for explicit
+    BlackScholesModel() ;
+    
+    // Alternative constructor with one input
+    // Use explicit on constructors with a single argument unless you specifically want implicit conversion.
+    // it prevents implicit conversions from double to BlackScholesModel.
+    // which can lead to confusing or unintended behavior in larger systems.
+    // Do not use explicit on multi-argument constructors (as they cannot be used for implicit conversions in this way).
+    explicit BlackScholesModel(double stockPrice) ;
+    
+    // The class string is different
+    // std::string allows implicit conversions for practical and historical reasons.
+    // std::string has one clear, unambiguous implicit conversion (const char* → std::string).
+    // For your quant classes, prefer explicit to prevent hidden, unclear behavior.
 };
 
 #endif /* BlackScholesModel_hpp */

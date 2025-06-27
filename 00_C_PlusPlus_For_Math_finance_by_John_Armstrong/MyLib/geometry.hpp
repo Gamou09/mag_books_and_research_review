@@ -61,4 +61,24 @@ public:
 double perimeterTriangle (const CartesianPoint& p1,
                           const CartesianPoint& p2,
                           const CartesianPoint& p3) ;
+
+// New class with  constructor
+class Point {
+    
+// allow bellow member variables to be accessible outside of the class
+// by defaut it's private
+public:
+    // declare default constructor
+    // No parameter for default constructor
+    // key difference with normal function: Name is same as Class and no return type
+    // Think of the a constructor as a function that is automatically called before anyone is allowed to see the object
+    // Technically is not a function as only called when the object is being initialised and doesn't have a return value
+    Point() ;
+    
+    // member variables
+    double x;
+    double y;
+    
+};
+
 #endif /* geometry_hpp */

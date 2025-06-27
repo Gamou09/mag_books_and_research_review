@@ -175,6 +175,19 @@ static void testPerimeterTriangle(){
     ASSERT_APPROX_EQUAL(example_perimeter, 12, 1e-3) ;
 }
 
+// Implement default constructor
+// Constructor do not have return type
+// good syntax
+//Point::Point(){
+//    x = 0.0 ;
+//    y = 0.0 ;
+//}
+// superior syntax
+// using initialisation list
+// Marginal faster than the good syntax since we are using the default of each variable
+// when familiar with the syntax, it's more readable because it is immediately obvious that there is nothing clever going on
+Point::Point(): x(0.0),y(0.0) {}
+
 void testGeometry() {
 //    switch on the DEBUG_PRINT statements
     setDebugEnabled(true) ;

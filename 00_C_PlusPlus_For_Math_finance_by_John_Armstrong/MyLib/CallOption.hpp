@@ -13,11 +13,18 @@
 class CallOption{
 
 public:
+    // default constructor
+    CallOption();
+    
+    // constructor with parameter
+    CallOption(double strike, double maturity) ;
+    
+    // member variable
     double strike;
     double maturity ;
     
+    // member function aka method
     double payoff ( double stockAtMaturity) const ;
-    
     double price ( const BlackScholesModel& bsm) const ;
 } ;
 

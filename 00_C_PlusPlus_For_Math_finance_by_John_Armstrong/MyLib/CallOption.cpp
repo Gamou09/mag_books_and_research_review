@@ -65,6 +65,11 @@ static void testCallOptionprice(){
     ASSERT_APPROX_EQUAL(price, 4.046, 1e-2) ;
 }
 
+// default constructor implementation
+CallOption::CallOption() : strike(0.0), maturity(0.0){}
+
+// Alternative constructor implementation
+CallOption::CallOption(double s, double m): strike(m), maturity(m){}
 
 void testCallOption(){
     TEST( testCallOptionPayoff) ; 

@@ -66,5 +66,24 @@ int main() {
     
     // Test chap 8.6.2 - LineChart class
     testLineChart() ;
+    
+    // Testing a class with default constructor who know work
+    cout  << "--- Testing Class with or without a (default) constructor ---\n" ;
+    //    // This code will generate a warning because variable not initialize
+          // leading to fail build up in our case since that's our setting is
+    //    double d ;
+    //    cout << "What is the value of d\n?" ;
+    //    cout << d ;
+    //
+    //    CartesianPoint cartP ;
+    //    cout << "What is the value of x?\n" ;
+    //    cout << cartP.x ;
+        
+    //    Clean solution would be add a constructor in our self defined class (since we can't fix all c++)
+    //    return 0 ;
+    
+    Point p ;
+    cout << "What is the value of x?\n" ;
+    cout << "x = " << p.x << "\n";
 
 }
