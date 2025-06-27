@@ -17,7 +17,7 @@ void LineChart::setNumberOfPoints(int inputNumberOfPoints){
     numberOfPoints = inputNumberOfPoints ;
 }
 
-int LineChart::getNumberOfPoints(){
+int LineChart::getNumberOfPoints() const {
     return numberOfPoints;
 }
 
@@ -26,11 +26,11 @@ int LineChart::getNumberOfPoints(){
 // because only addEntry add an element and do it for both everytime
 void LineChart::addXEntry (double value) {
     x_values.push_back(value) ;
-};
+}
 
 void LineChart::addYEntry (double value) {
     y_values.push_back(value) ;
-};
+}
 
 static void writeTopBoilerPlateOfLineChart( ostream& out ){
     
@@ -87,7 +87,7 @@ static void writeBottomBoilerPlateOfLineChart( ostream& out ){
     out << "\n" ;
 }
 
-static void writeDataOfPieChart(ostream& out,
+static void writeDataOfLineChart(ostream& out,
                                 const vector<double>& x_values,
                                 const vector<double>& y_values){
     out << "data.addRows([\n" ;
@@ -112,7 +112,7 @@ void LineChart::writeAsHTML (const string& title) const {
     ofstream out ;
     out.open(title.c_str());
     writeTopBoilerPlateOfLineChart( out ) ;
-    writeDataOfPieChart(out,x_values,y_values) ;
+    writeDataOfLineChart(out,x_values,y_values) ;
     writeBottomBoilerPlateOfLineChart( out ) ;
     out.close() ;
 }

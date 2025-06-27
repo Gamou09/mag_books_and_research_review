@@ -21,7 +21,7 @@ public:
     void writeAsHTML (std::ostream& out) const ;
     void writeAsHTML (const std::string& title) const ;
     
-    int getNumberOfPoints() ; 
+    int getNumberOfPoints() const ; 
     
 // By marking below member variable as private, only the member function of PieChart can see these variables
 // That is the concept of encapsulation which refers to two things:
