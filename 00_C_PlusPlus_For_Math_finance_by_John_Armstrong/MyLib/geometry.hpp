@@ -33,6 +33,8 @@ public:
     // member variables
     double x;
     double y;
+    double distanceTo( const CartesianPoint& p) const ;
+    double perimeterTriangle (const CartesianPoint& p1, const CartesianPoint& p2, const CartesianPoint& p3) const ;
 };
 
 void useCartesianClass() ;
@@ -56,4 +58,7 @@ public:
     // here we use const for circumference implying that measure the circumference doesn't change the circle
 } ;
 
+double perimeterTriangle (const CartesianPoint& p1,
+                          const CartesianPoint& p2,
+                          const CartesianPoint& p3) ;
 #endif /* geometry_hpp */

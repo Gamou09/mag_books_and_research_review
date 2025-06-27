@@ -124,6 +124,57 @@ static void testPolarToCartesian(){
     ASSERT_APPROX_EQUAL(c.y, 0.0, 1e-3) ;
 }
 
+// Implementation of distanceTo and Test
+
+double CartesianPoint::distanceTo(const CartesianPoint& p) const {
+    
+    return sqrt((x - p.x)*(x - p.x) + (y - p.y)*(y - p.y)) ;
+    
+}
+
+static void testDistanceTo(){
+    CartesianPoint p1 ;
+    p1.x = 1 ;
+    p1.y = 1 ;
+    CartesianPoint p2 ;
+    p2.x = 4 ;
+    p2.y = 5 ;
+    
+    double d = p1.distanceTo(p2) ;
+    ASSERT_APPROX_EQUAL(d, 5.0, 1e-4) ;
+}
+
+// Implement of perimeter fucntion
+double perimeterTriangle (const CartesianPoint& p1,
+                          const CartesianPoint& p2,
+                          const CartesianPoint& p3){
+    
+    double d_p1_p2 = p1.distanceTo(p2) ;
+    double d_p2_p3 = p2.distanceTo(p3) ;
+    double d_p3_p1 = p3.distanceTo(p1) ;
+    
+    double perimeter_of_p1_p2_p3 = d_p1_p2 + d_p2_p3 + d_p3_p1 ;
+    
+    return perimeter_of_p1_p2_p3 ;
+    
+}
+
+static void testPerimeterTriangle(){
+    
+    CartesianPoint p1 ;
+    p1.x = 0 ;
+    p1.y = 0 ;
+    CartesianPoint p2 ;
+    p2.x = 3 ;
+    p2.y = 0 ;
+    CartesianPoint p3 ;
+    p3.x = 3 ;
+    p3.y = 4 ;
+    
+    double example_perimeter = perimeterTriangle(p1, p2, p3) ;
+    ASSERT_APPROX_EQUAL(example_perimeter, 12, 1e-3) ;
+}
+
 void testGeometry() {
 //    switch on the DEBUG_PRINT statements
     setDebugEnabled(true) ;
@@ -131,5 +182,7 @@ void testGeometry() {
     setDebugEnabled(false) ;
     TEST( testCircumferenceCircle ); // should not be called witht he parenthesis
     TEST( testPolarToCartesian ) ;
+    TEST( testDistanceTo ) ;
+    TEST( testPerimeterTriangle) ;
 }
 
