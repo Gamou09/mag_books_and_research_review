@@ -60,5 +60,11 @@ int main() {
     
     // test Pie chart with class
     testPieChart() ;
+    
+    // Test chap 8.6.1 - PutOption class
+    testPutOption() ;
+    
+    // Test chap 8.6.2 - LineChart class
+    testLineChart() ;
 
 }

@@ -67,6 +67,10 @@
 
 #include "PieChart.hpp"
 
+#include "PutOption.hpp"
+
+#include "LineChart.hpp"
+
 #endif /* stdafx_h */
 
 
