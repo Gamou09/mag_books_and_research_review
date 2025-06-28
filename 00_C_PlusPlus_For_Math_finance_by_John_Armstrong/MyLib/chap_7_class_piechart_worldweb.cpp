@@ -22,6 +22,9 @@ void writeCSVChartData(ostream &out,
 void writeCSVChart(const string& filename,
                    const vector<double>& x,
                    const vector<double>& y){
+    /**
+     This is a basic documentation for the writeCSVChart function
+     */
     ofstream out ;
     // use c_str() to convert a string back into a char*
     // char* --> a pointer to a memory address containing a sequence of characters

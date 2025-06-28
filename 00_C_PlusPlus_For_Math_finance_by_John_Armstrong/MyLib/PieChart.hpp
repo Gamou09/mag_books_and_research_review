@@ -13,6 +13,10 @@
 class PieChart {
     
 public:
+    // declaration of constructor(s)
+    PieChart() ;
+    PieChart(std::string& title_, std::vector<std::string> labels_, std::vector<double> values_) ;
+    
     void setTitle (const std::string& title) ;
     void addEntry (const std::string& label, double value) ;
     void writeAsHTML ( std::ostream& out) const ;

@@ -9,6 +9,11 @@
 
 using namespace std ;
 
+// definition of constructor
+PieChart::PieChart(): title("Default Ttitle"), labels(vector<string>({"Default value"})), values(vector<double>(10)) {};
+
+PieChart::PieChart(string& title_, vector<string> labels_, vector<double> values_): title(title_), labels(labels_), values(values_) {};
+
 void PieChart::setTitle(const string& t){
     title = t ;
 }
@@ -114,6 +119,7 @@ static void testPieChartClass(){
     
     pieChart.writeAsHTML("PizzaPie.html") ;
 }
+
 
 void testPieChart(){
     

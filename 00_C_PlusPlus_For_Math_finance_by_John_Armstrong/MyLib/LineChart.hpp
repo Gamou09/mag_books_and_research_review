@@ -13,6 +13,11 @@
 class LineChart {
     
 public:
+    // Constructor declaration
+    LineChart() ;
+    LineChart(std::string& title_, int numberOfPoints_) ;
+    
+    
     void setTitle (const std::string& title) ;
     void setNumberOfPoints (int numberOfPoints) ;
     

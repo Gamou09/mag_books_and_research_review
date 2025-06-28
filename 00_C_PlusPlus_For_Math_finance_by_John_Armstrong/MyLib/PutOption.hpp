@@ -20,6 +20,10 @@ private:
     double maturity ;
 
 public:
+    // declarations of constructors
+    PutOption();
+    PutOption(const double strike_, const double maturity_);
+    
     // setter function member
     void setStrike ( double inputStrike) ;
     void setMaturity ( double inputMaturity) ;

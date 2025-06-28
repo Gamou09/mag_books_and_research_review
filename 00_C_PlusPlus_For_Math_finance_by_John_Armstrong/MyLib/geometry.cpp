@@ -81,6 +81,23 @@ double Circle::circumference() const{
 }
 
 
+// Polar point constructor
+// default constructor with better syntax
+PolarPoint::PolarPoint(): r(0.0), theta(0.0){}
+
+// Alternative constructor with good syntax
+PolarPoint::PolarPoint(double r_, double theta_){
+    r = r_ ;
+    theta = theta_;
+}
+
+// Cirle class constructor
+// default constructor with better syntax
+Circle::Circle(): radius(0.0){}
+
+// Alternative constructor with better syntax
+Circle::Circle(double radius_): radius(radius_){}
+
 ///////////////////////////////////////////////
 //
 //   TESTS

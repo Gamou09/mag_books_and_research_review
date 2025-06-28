@@ -24,7 +24,7 @@ void testGeometry() ;
 
 // Class declaration
 // similar to other variable, or function when you declare in header you want other to be able to use it
-
+// Intentionally left without member initializers (constructors) to demonstrate compiler warnings for uninitialized fields
 class CartesianPoint {
     
 // allow bellow member variables to be accessible outside of the class
@@ -44,6 +44,12 @@ class PolarPoint {
 public:
     double r;
     double theta;
+    
+    // default constructor
+    PolarPoint() ;
+    
+    // Alternative constructor
+    PolarPoint(double r_, double theta_) ;
 };
 
 CartesianPoint polarToCartesian( const PolarPoint& p) ;
@@ -56,6 +62,13 @@ public:
     double area() ; // notice that the declaration of the method doesn't take any paremeters
     double circumference() const; // As seen before, we can add a const keyword but it has to be consistent
     // here we use const for circumference implying that measure the circumference doesn't change the circle
+    
+    // default constructor
+    Circle() ;
+    
+    // Alternative constructor
+    // using explicit keywords to avoid undesirable type convertion since one arg
+    explicit Circle(double radius_) ;
 } ;
 
 double perimeterTriangle (const CartesianPoint& p1,

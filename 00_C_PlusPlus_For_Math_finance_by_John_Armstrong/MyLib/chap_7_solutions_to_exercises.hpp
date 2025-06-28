@@ -40,6 +40,8 @@ double min_max(const std::vector<double>& nums, bool is_min) ;
 
 std::vector<double> make_vector(std::initializer_list<double> values) ;
 
+std::vector<std::string> make_vector(std::initializer_list<std::string> values) ;
+
 // 7.7.5
 
 std::vector<double> randuniform(const int n) ;

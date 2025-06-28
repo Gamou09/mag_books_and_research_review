@@ -7,6 +7,10 @@
 
 #include "stdafx.h"
 
+// defintion of constructors
+PutOption::PutOption(): strike(0.0), maturity(0.0){};
+PutOption::PutOption(const double strike_, const double maturity_) : strike(strike_), maturity(maturity_){};
+
 // getter functions
 double PutOption::getStrike() const {
     return strike ;

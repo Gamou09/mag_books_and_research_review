@@ -9,6 +9,10 @@
 
 using namespace std ;
 
+// definition of constructors
+LineChart::LineChart() :  title("Default title"), numberOfPoints(50) {};
+LineChart::LineChart(string& title_, int numberOfPoints_): title(title_), numberOfPoints(numberOfPoints_) {} ;
+
 void LineChart::setTitle(const string& t){
     title = t ;
 }
