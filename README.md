@@ -1,4 +1,4 @@
-# Welcome to my repository for my continuous learning 
+# Welcome to my continuous learning repository 
 
 ## Intro
 Here, I will gather all the continuous learning that I do which will serve as a base for other projects. 
