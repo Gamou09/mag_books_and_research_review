@@ -71,6 +71,8 @@
 
 #include "LineChart.hpp"
 
+#include "Polynomial.hpp"
+
 #endif /* stdafx_h */
 
 

@@ -84,6 +84,13 @@ int main() {
     
     Point p ;
     cout << "What is the value of x?\n" ;
-    cout << "x = " << p.x << "\n";
+    cout << "x = " << p.x << "\n\n";
+    
+    // Testing PolynomialClass
+    testPolynomialClass() ;
 
+    // Manual draft
+    vector<double> vec ({0.0}) ;
+    cout << vec.size() << "\n" ;
+    
 }
