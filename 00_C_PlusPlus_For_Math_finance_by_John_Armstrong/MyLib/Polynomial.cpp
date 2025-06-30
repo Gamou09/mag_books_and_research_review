@@ -100,15 +100,15 @@ void testPolynomialAdd(){
     
     // Initial poly
     Polynomial examplePolyMain(vector<double>({1, 2, 3})) ;
-    cout << examplePolyMain.getCoefficients().size() << "\n" ;
+    //cout << examplePolyMain.getCoefficients().size() << "\n" ;
 
     Polynomial examplePolyInput(vector<double>({0, 0, 0, 1, 2, 3})) ;
-    cout << examplePolyInput.getCoefficients().size() << "\n" ;
+    //cout << examplePolyInput.getCoefficients().size() << "\n" ;
 
     
     // add operation on examplePolyMain
     examplePolyMain.add(examplePolyInput) ;
-    cout << examplePolyMain.getCoefficients().size() << "\n" ;
+    //cout << examplePolyMain.getCoefficients().size() << "\n" ;
     
     ASSERT( examplePolyMain.getCoefficients().size() == 6) ;
     ASSERT( examplePolyMain.getCoefficients()[0] == 1) ;
@@ -120,15 +120,15 @@ void testPolynomialAdd(){
     
     // Initial poly
     Polynomial examplePolyMain2(vector<double>({0, 0, 2, 3})) ;
-    cout << examplePolyMain2.getCoefficients().size() << "\n" ;
+    //cout << examplePolyMain2.getCoefficients().size() << "\n" ;
 
     Polynomial examplePolyInput2(vector<double>({98, 99})) ;
-    cout << examplePolyInput2.getCoefficients().size() << "\n" ;
+    //cout << examplePolyInput2.getCoefficients().size() << "\n" ;
 
     
     // add operation on examplePolyMain
     examplePolyMain2.add(examplePolyInput2) ;
-    cout << examplePolyMain2.getCoefficients().size() << "\n" ;
+    //cout << examplePolyMain2.getCoefficients().size() << "\n" ;
     
     ASSERT( examplePolyMain2.getCoefficients().size() == 4) ;
     ASSERT( examplePolyMain2.getCoefficients()[0] == 98) ;

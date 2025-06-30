@@ -1,0 +1,67 @@
+//
+//  MonteCarloPricer.cpp
+//  MyLib
+//
+//  Created by Martial Aguessi on 30/06/2025.
+//
+
+#include "MonteCarloPricer.hpp"
+
+using namespace std ;
+
+/* define Constructor */
+MonteCarloPricer::MonteCarloPricer() : nScenarios(10000) {};
+
+/* define and test Price a call option */
+double MonteCarloPricer::price (const CallOption& callOption,
+                                const BlackScholesModel& bsm) {
+    
+    double total = 0.0 ;
+    for ( int i = 0 ; i < nScenarios ; i++) {
+        vector<double> path = bsm.generateRiskNeutralPricePath(callOption.maturity, 1) ;
+        double stockPrice = path.back() ;
+        double payoff = callOption.payoff(stockPrice) ;
+        total += payoff ;
+    }
+    
+    double mean = total / nScenarios ;
+    double r = bsm.riskFreeRate ;
+    double T = callOption.maturity - bsm.date ;
+    
+    return  exp(-r*T)*mean ;
+}
+
+static void testPriceCallOption(){
+    
+    // fix the seed
+    rng("default") ;
+    
+    // definition the call option
+    CallOption c ;
+    c.strike = 110 ;
+    c.maturity = 2 ;
+    
+    // definition of the model
+    BlackScholesModel bsm ;
+    bsm.volatility = 0.1 ;
+    bsm.riskFreeRate = 0.05 ;
+    bsm.stockPrice = 100 ;
+    bsm.drift = 0.1 ;
+    bsm.date = 1 ;
+    
+    // Use the pricer
+    MonteCarloPricer monteCarloPricer ;
+    double price = monteCarloPricer.price(c, bsm) ;
+    double expected = c.price(bsm) ;
+    ASSERT_APPROX_EQUAL(price, expected, 1e-1) ;
+    
+}
+
+
+void testMonteCarloPricer() {
+    
+    TEST( testPriceCallOption ) ;
+    
+}
+
+

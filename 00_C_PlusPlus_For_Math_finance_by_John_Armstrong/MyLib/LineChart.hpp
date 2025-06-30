@@ -20,6 +20,7 @@ public:
     
     void setTitle (const std::string& title) ;
     void setNumberOfPoints (int numberOfPoints) ;
+    void setSeries(std::vector<double> input_x_values, std::vector<double> input_y_values) ;
     
     void addXEntry (double value) ;
     void addYEntry (double value) ;

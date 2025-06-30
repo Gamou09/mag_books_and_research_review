@@ -197,6 +197,27 @@ double norminv( double x) {
   }
 }
 
+// helper function
+vector<double> linespace(double start, double end, int nSteps) {
+    
+    vector<double> result(nSteps);
+    double step = (end - start) / (nSteps - 1);
+    for (int i = 0; i < nSteps; ++i) {
+        result[i] = start + i * step;
+    }
+    return result;
+}
+
+/*  MersenneTwister random number generator */
+static mt19937 mersenneTwister;
+
+/*  Reset the random number generator. We've borrowed the library call
+    from MATLAB, though we're ignoring the description string */
+void rng( const string& description ) {
+    ASSERT( description=="default" );
+    mersenneTwister.seed(mt19937::default_seed);
+}
+
 ///////////////////////////////////////////////
 //
 //   TESTS

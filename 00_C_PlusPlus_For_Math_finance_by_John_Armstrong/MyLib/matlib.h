@@ -37,6 +37,11 @@ double normcdf(double x) ;
  */
 double norminv(double x) ;
 
+// helper function
+#include <vector>
+std::vector<double> linespace(double start, double end, int nSteps) ;
+
+void rng( const std::string& description ) ;
 
 /**
  *  Test function

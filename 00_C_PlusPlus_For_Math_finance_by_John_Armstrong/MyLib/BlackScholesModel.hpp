@@ -19,6 +19,7 @@ public:
     double volatility;
     double riskFreeRate;
     double date; // date will be measure in year since 0 A.D e.g 01/01/2014 will be 2014.0 - For real prod, consider proper date
+    double drift ;
     
     // default constructor
     // OK, no need for explicit
@@ -35,6 +36,21 @@ public:
     // std::string allows implicit conversions for practical and historical reasons.
     // std::string has one clear, unambiguous implicit conversion (const char* → std::string).
     // For your quant classes, prefer explicit to prevent hidden, unclear behavior.
+    
+    // member function to generate Price Path
+    std::vector<double> generatePricePath(double toDate, int nSteps) const ;
+    
+    // member function to generate Risk Neutreal Price Path
+    std::vector<double> generateRiskNeutralPricePath(double toDate, int nSteps) const ;
+    
+private:
+    
+    // helper function to generate Risk Neutreal Price Path where we can chose the drift
+    std::vector<double> generatePricePath(double toDate, int nSteps, double drift) const ;
+    
+    
 };
+
+void testBlackScholesModel() ; 
 
 #endif /* BlackScholesModel_hpp */

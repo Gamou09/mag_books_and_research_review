@@ -343,7 +343,7 @@ void test_make_vector() {
 
 // 7.7.5
 
-vector<double> randuniform(const int n = 1){
+vector<double> randuniformOld(const int n = 1){
 
     // using rand() from <cstdlib> --> https://cplusplus.com/reference/cstdlib/rand/
     vector<double> res ;
@@ -357,15 +357,28 @@ vector<double> randuniform(const int n = 1){
     
 }
 
+
+
 void test_randomuniform(){
     
-    vector<double> nums = randuniform(10) ;
+    vector<double> nums = randuniformOld(10) ;
     
     // check that all values are within 0 and 1
     for (auto x : nums) {
         assert( x >= 0 && x <=  1) ;
     }
     
+}
+
+static mt19937 mersenneTwister ;
+
+vector<double> randuniform (int n){
+    vector<double> ret(n, 0.0) ;
+    for (int i=0; i < n; i++) {
+        ret[i] = (mersenneTwister() + 0.5)/(mersenneTwister.max() + 1.0) ;
+    }
+    
+    return ret ;
 }
 
 

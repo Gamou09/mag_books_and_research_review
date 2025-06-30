@@ -88,9 +88,14 @@ int main() {
     
     // Testing PolynomialClass
     testPolynomialClass() ;
-
+    
+    // Test BlackScholesModel class
+    testBlackScholesModel() ;
+    
+    // Test of the Monte Carlo Pricer
+    testMonteCarloPricer() ;
+    
     // Manual draft
     vector<double> vec ({0.0}) ;
     cout << vec.size() << "\n" ;
-    
 }

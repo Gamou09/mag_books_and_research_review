@@ -44,7 +44,7 @@ std::vector<std::string> make_vector(std::initializer_list<std::string> values) 
 
 // 7.7.5
 
-std::vector<double> randuniform(const int n) ;
+std::vector<double> randuniformOld(const int n) ;
 
 // 7.7.6
 

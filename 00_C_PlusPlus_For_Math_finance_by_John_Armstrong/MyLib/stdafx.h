@@ -73,6 +73,8 @@
 
 #include "Polynomial.hpp"
 
+#include "MonteCarloPricer.hpp"
+
 #endif /* stdafx_h */
 
 

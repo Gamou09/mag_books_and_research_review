@@ -171,6 +171,13 @@ static void testCosLineChartClass(){
     lineChart.writeAsHTML("CosinusFunction.html") ;
 }
 
+// defintion of setSeries
+void LineChart::setSeries(std::vector<double> input_x_values, std::vector<double> input_y_values){
+    
+    x_values = input_x_values;
+    y_values = input_y_values;
+}
+
 void testLineChart(){
     
     TEST( testSquareLineChartClass ) ;
