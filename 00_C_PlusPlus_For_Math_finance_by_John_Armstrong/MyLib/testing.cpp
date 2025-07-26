@@ -6,7 +6,8 @@
 //  Copyright © 2025 C++ for financial mathematics. All rights reserved.
 //
 
-#include "testing.hpp"
+// #include "testing.hpp"
+#include "stdafx.h"
 
 /*  Whether debug messages are enabled */
 static bool debugEnabled = false;

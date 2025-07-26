@@ -5,8 +5,9 @@
 //  Created by Martial Aguessi on 30/06/2025.
 //
 
-#ifndef MonteCarloPricer_hpp
-#define MonteCarloPricer_hpp
+// #ifndef MonteCarloPricer_hpp
+// #define MonteCarloPricer_hpp
+#pragma once
 
 #include "stdafx.h"
 
@@ -22,8 +23,12 @@ public:
     /* Price a call option */
     double price (const CallOption& callOption,
                   const BlackScholesModel& bsm) ;
+    
+    /* Price a put option */
+    double price (const PutOption& putOption,
+                  const BlackScholesModel& bsm) ;
 };
 
 void testMonteCarloPricer() ;
 
-#endif /* MonteCarloPricer_hpp */
+// #endif /* MonteCarloPricer_hpp */

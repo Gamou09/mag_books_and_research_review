@@ -5,7 +5,7 @@
 //  Created by Martial Aguessi on 30/06/2025.
 //
 
-#include "MonteCarloPricer.hpp"
+#include "stdafx.h"
 
 using namespace std ;
 
@@ -57,10 +57,55 @@ static void testPriceCallOption(){
     
 }
 
+/* define and test Price a put option */
+double MonteCarloPricer::price (const PutOption& putOption,
+                                const BlackScholesModel& bsm) {
+    
+    double total = 0.0 ;
+    for ( int i = 0 ; i < nScenarios ; i++) {
+        vector<double> path = bsm.generateRiskNeutralPricePath(putOption.getMaturity(), 1) ;
+        double stockPrice = path.back() ;
+        double payoff = putOption.payoff(stockPrice) ;
+        total += payoff ;
+    }
+    
+    double mean = total / nScenarios ;
+    double r = bsm.riskFreeRate ;
+    double T = putOption.getMaturity() - bsm.date ;
+    
+    return  exp(-r*T)*mean ;
+}
+
+static void testPricePutOption(){
+    
+    // fix the seed
+    rng("default") ;
+    
+    // definition the call option
+    PutOption p ;
+    p.setStrike(90) ;
+    p.setMaturity(3) ;
+    
+    // definition of the model
+    BlackScholesModel bsm ;
+    bsm.volatility = 0.1 ;
+    bsm.riskFreeRate = 0.05 ;
+    bsm.stockPrice = 100 ;
+    bsm.drift = 0.1 ;
+    bsm.date = 1 ;
+    
+    // Use the pricer
+    MonteCarloPricer monteCarloPricer ;
+    double price = monteCarloPricer.price(p, bsm) ;
+    double expected = p.price(bsm) ;
+    ASSERT_APPROX_EQUAL(price, expected, 1e-1) ;
+    
+}
 
 void testMonteCarloPricer() {
     
     TEST( testPriceCallOption ) ;
+    TEST( testPricePutOption ) ;
     
 }
 
