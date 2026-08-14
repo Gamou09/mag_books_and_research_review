@@ -33,5 +33,6 @@ private:
     
 };
 
-void testPieChart() ; 
+void testPieChart() ;
+
 #endif /* PieChart_hpp */

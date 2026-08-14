@@ -27,6 +27,10 @@ public:
     /* Price a put option */
     double price (const PutOption& putOption,
                   const BlackScholesModel& bsm) ;
+    
+    /* Price a PathIndependentOption */
+    double price (const PathIndependentOption& option,
+                  const BlackScholesModel& bsm) ;
 };
 
 void testMonteCarloPricer() ;

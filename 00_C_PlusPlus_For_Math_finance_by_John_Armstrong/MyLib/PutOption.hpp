@@ -12,7 +12,7 @@
 
 // Significant benefit opf seperating the the Model to the Options
 // the option is the contract and doesn't change when market changed even though its price may vary
-class PutOption{
+class PutOption: public PathIndependentOption {
 
 // member variables in private to align with design principle of Encapsulation
 private:

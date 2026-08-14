@@ -102,10 +102,38 @@ static void testPricePutOption(){
     
 }
 
+static void testPutAndCall(){
+    
+    rng("default") ;
+    
+    BlackScholesModel m;
+    m.volatility = 0.1 ;
+    m.riskFreeRate = 0.05 ;
+    m.stockPrice = 100.0 ;
+    m.drift = 0.1 ;
+    
+    CallOption c ;
+    c.strike = 110 ;
+    c.maturity = 2;
+
+    PutOption p ;
+    p.setStrike(c.strike) ;
+    p.setMaturity(c.maturity) ;
+    
+    // Our pricer can price puts and calls
+    MonteCarloPricer pricer ;
+    double priceC = pricer.price(c,m);
+    ASSERT_APPROX_EQUAL(priceC, c.price(m), 0.1);
+    double priceP = pricer.price(p,m);
+    ASSERT_APPROX_EQUAL(priceP, p.price(m), 0.1);
+    
+}
+
 void testMonteCarloPricer() {
     
     TEST( testPriceCallOption ) ;
     TEST( testPricePutOption ) ;
+    TEST( testPutAndCall ) ;
     
 }
 
